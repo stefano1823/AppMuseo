@@ -40,8 +40,8 @@ public class MainActivity extends Activity implements ZXingScannerView.ResultHan
      */
     @Override
     protected void onPause() {
-        super.onPause();
         mScannerView.stopCamera();
+        super.onPause();
     }
 
     /**

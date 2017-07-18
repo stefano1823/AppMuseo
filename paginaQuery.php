@@ -23,4 +23,4 @@
 	
 	header('Content-Type: application/json');
 	echo json_encode(array('opere'=>$temp_array));
-?>
+
