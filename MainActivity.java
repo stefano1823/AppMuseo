@@ -23,7 +23,6 @@ public class MainActivity extends Activity implements ZXingScannerView.ResultHan
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     /**
      * Procedura che consente, una volta premuto il bottone relativo, di avviare la fotocamera per il riconoscimento del QR Code.
      * @param w
@@ -33,7 +32,7 @@ public class MainActivity extends Activity implements ZXingScannerView.ResultHan
         setContentView(mScannerView);
         mScannerView.setResultHandler(this);
         mScannerView.startCamera();
-}
+    }
 
     /**
      * Procedura che mette in pausa l'utilizzo della fotocamera

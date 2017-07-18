@@ -3,6 +3,7 @@ package com.example.gerar.smuseum;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,7 +33,6 @@ public class Main2Activity extends Activity implements OnInitListener{
     TextView risultati;
     private TextToSpeech tts;
     private Button speak;
-
     /**
      * Procedura che permette di avviare l'activity
      * @param savedInstanceState Oggetto di tipo Bundle che contiene lo stato precedentemente salvato dell'attività
@@ -93,7 +93,9 @@ public class Main2Activity extends Activity implements OnInitListener{
                             if (res.equals(cod_opera)) {
                                 flag = true;
                                 String so = "TITOLO" + ":" + "\t" + titolo + "\n" + "DESCRIZIONE" + ":" + "\n" + descr + "\n" + "LUOGO" + ":" + "\t" + luogo + "\n" + "AUTORE" + ":" + "\t" + autore + "\n" + "PERIODO STORICO " + ":" + "\t" + pstorico + "\n" + "TECNICA" + ":" + "\t" + tecnica + "\n" + "DIMENSIONI" + ":" + "\t" + dim + "\n";
+                                risultati.setMovementMethod(new ScrollingMovementMethod());
                                 risultati.setText(so);
+
 
                             }
 
