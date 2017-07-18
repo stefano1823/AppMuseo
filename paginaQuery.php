@@ -7,8 +7,8 @@
 		echo 'Impossibile connettersi al database!';
 	}
 	$dbConn->exec('set names utf8');
-	$output="";
-	$risultato = $dbConn->prepare("SELECT codice_opera, nome_opera, descrizione, luogo, autore, periodo_storico, tecnica, dimensioni FROM elenco_opere;");
+	$output='';
+	$risultato = $dbConn->prepare('SELECT codice_opera, nome_opera, descrizione, luogo, autore, periodo_storico, tecnica, dimensioni FROM elenco_opere;');
 	if(!(isset($risultato))){
 		echo 'Impossibile eseguire la query!';
 		break;
@@ -22,5 +22,5 @@
 	}
 	
 	header('Content-Type: application/json');
-	echo json_encode(array("opere"=>$temp_array));
+	echo json_encode(array('opere'=>$temp_array));
 ?>

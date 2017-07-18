@@ -17,7 +17,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
+
 
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
@@ -72,9 +72,11 @@ public class Main2Activity extends Activity implements OnInitListener{
                 try {
                     JSONArray opere = response.getJSONArray("opere");
                     boolean flag = false;
-                    for (int i = 0; i < opere.length(); i++) {
+                    int lung1 = opere.length();
+                    for (int i = 0; i < lung1; i++) {
                         JSONArray opera = opere.getJSONArray(i);
-                        for (int j = 0; j < opera.length() && !flag; j++) {
+                        int lung2 = opera.length();
+                        for (int j = 0; j < lung2 && !flag; j++) {
                             JSONObject unaopera = opera.getJSONObject(j);
                             String cod_opera = unaopera.getString("codice_opera");
                             String titolo = unaopera.getString("nome_opera");
@@ -98,7 +100,7 @@ public class Main2Activity extends Activity implements OnInitListener{
                         risultati.append("Opera non trovata!");
                     }
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                    risultati.setText(e.getMessage());
                 }
 
             }
