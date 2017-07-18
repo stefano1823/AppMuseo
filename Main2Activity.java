@@ -45,12 +45,9 @@ public class Main2Activity extends Activity implements OnInitListener{
         String s = val.getStringExtra("handleResult");
         requestQueue = Volley.newRequestQueue(getApplicationContext());
         tts = new TextToSpeech(this,this);
-        if (findViewById(R.id.textView) instanceof TextView) {
-            risultati = (TextView) findViewById(R.id.textView);
-        }
-        if (findViewById(R.id.button2) instanceof Button) {
-            speak = (Button) findViewById(R.id.button2);
-        }
+        risultati = (TextView) findViewById(R.id.textView);
+        speak = (Button) findViewById(R.id.button2);
+        
 
         speak.setOnClickListener(new View.OnClickListener() {
                                     @Override
